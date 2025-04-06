@@ -4,7 +4,7 @@ import Stats from 'three/addons/libs/stats.module.js';
 import Pawpaw from './modules/Pawpaw';
 
 export function useBubble() {
-  let conf: any, scene: THREE.Scene, camera: THREE.PerspectiveCamera, cameraCtrl: OrbitControls, renderer: THREE.WebGLRenderer, stats: any;
+  let conf: any, scene: any, camera: any, cameraCtrl: OrbitControls, renderer: any, stats: any;
   // let whw: number, whh: number;
   let objects: Array<any>;
   let spriteMap: THREE.Texture;
@@ -16,6 +16,7 @@ export function useBubble() {
 
     camera.position.z = 30;
     camera.position.y = 20;
+    // 使相机始终朝向场景的中心
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     spriteMap = new THREE.TextureLoader().load(
@@ -24,6 +25,7 @@ export function useBubble() {
 
     objects = [];
     for (let i = 0; i < bubbleTotal; i++) {
+      // 初始化泡泡
       const object: any = new Pawpaw({
         spriteMap,
         conf,
@@ -35,13 +37,11 @@ export function useBubble() {
 
   const animate = () => {
     requestAnimationFrame(animate);
-
     cameraCtrl.update();
     stats?.update();
-
     renderer.render(scene, camera);
   };
-
+  // 窗口大小调整事件
   const onWindowResize = () => {
     if (!currentDom) return;
     // whw = currentDom.clientWidth / 2;
@@ -57,8 +57,9 @@ export function useBubble() {
       opacity: 0.8,
     };
     const $fps = document.getElementById('fps');
-
+    // 创建场景
     scene = new THREE.Scene();
+    // 创建相机，参数为视角100度、纵横比、近裁剪面0.1、远裁剪面1000
     camera = new THREE.PerspectiveCamera(
       100,
       dom.clientWidth / dom.clientHeight,
@@ -69,6 +70,7 @@ export function useBubble() {
     cameraCtrl.autoRotate = true;
     cameraCtrl.autoRotateSpeed = 5;
 
+    // 创建渲染器
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(dom.clientWidth, dom.clientHeight);
     dom.appendChild(renderer.domElement);
@@ -77,11 +79,40 @@ export function useBubble() {
       $fps.appendChild(stats.dom);
     }
 
+    // 初始化场景
     initScene();
     onWindowResize();
     dom.addEventListener('resize', onWindowResize, false);
     animate();
   };
 
-  return { initBubble };
+  const destroy = () => {
+    try {
+      renderer?.dispose();
+      renderer?.forceContextLoss();
+      renderer.content = null;
+      const gl: any = renderer?.domElement?.getContext("webgl");
+      if (gl && gl.getExtension("WEBGL_lose_context")) {
+        gl.getExtension("WEBGL_lose_context").loseContext();
+      }
+      currentDom?.removeEventListener('resize', onWindowResize, false);
+      scene.traverse((child: any) => {
+        if (child.material) {
+          child.material.dispose();
+        }
+        if (child.geometry) {
+          child.geometry.dispose();
+        }
+        child = null;
+      });
+      renderer = null;
+      camera = null;
+      scene = null;
+      currentDom = null;
+    } catch (e) {
+      console.error("Failed to destroy threejs", e);
+    }
+  };
+
+  return { initBubble, destroy };
 }

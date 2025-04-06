@@ -13,6 +13,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/ocean',
+    name: '02.海洋',
+    component: () => import('../views/examples/ocean.vue'),
+    meta: {
+      title: '海洋',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 

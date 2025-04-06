@@ -5,12 +5,12 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useBubble } from '@/hooks/useBubble'
-const { initBubble, destroy } = useBubble()
+import { useOcean } from '@/hooks/useOcean'
+const { initOcean, destroy } = useOcean()
 const canvasRef: any = ref()
 
 onMounted(() => {
-  initBubble(canvasRef.value)
+  initOcean(canvasRef.value)
 })
 onBeforeUnmount(() => {
   destroy()
