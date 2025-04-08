@@ -30,13 +30,13 @@ const routes = computed(() => router.options.routes)
     width: 200px;
     height: 100%;
     font-size: 14px;
-    text-align: center;
     margin-top: 0;
     flex-direction: column;
     border-right: 1px solid var(--color-border);
+    box-sizing: border-box;
     a {
       width: 100%;
-      padding: 4px 0;
+      padding: 4px 12px;
       border-bottom: 1px solid var(--color-border);
       color: var(--color-text);
       text-decoration: none;
