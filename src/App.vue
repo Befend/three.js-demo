@@ -27,7 +27,7 @@ const routes = computed(() => router.options.routes)
   overflow: hidden;
   .left-panel {
     display: flex;
-    width: 200px;
+    width: 160px;
     height: 100%;
     font-size: 14px;
     margin-top: 0;
@@ -55,7 +55,7 @@ const routes = computed(() => router.options.routes)
   }
   .right-panel {
     position: relative;
-    width: calc(100% - 200px);
+    width: calc(100% - 160px);
     height: 100%;
   }
 }

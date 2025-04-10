@@ -26,6 +26,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/dynamicCube',
+    name: '03.动态网格',
+    component: () => import('../views/examples/dynamicCube.vue'),
+    meta: {
+      title: '动态网格',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 
