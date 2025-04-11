@@ -5,3 +5,9 @@ declare module '*.vue' {
   const component: DefineComponent;
   export default component;
 }
+
+// global.d.ts
+declare module "*.exr" {
+  const content: string;
+  export default content;
+}

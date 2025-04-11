@@ -39,6 +39,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/vr',
+    name: '04.vr看房',
+    component: () => import('../views/examples/vr.vue'),
+    meta: {
+      title: 'vr看房',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 
