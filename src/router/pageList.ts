@@ -52,6 +52,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/airplane',
+    name: '05.飞机',
+    component: () => import('../views/examples/airplane.vue'),
+    meta: {
+      title: '飞机',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 

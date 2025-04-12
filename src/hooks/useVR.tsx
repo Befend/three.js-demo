@@ -40,8 +40,10 @@ export function useVR() {
     dom.appendChild(renderer.domElement);
 
     // 创建球体并设置纹理
-    const geometry = new THREE.SphereGeometry(500, 60, 40); // 球体半径 500，60 段宽度，40 段高度
-    geometry.scale(-1, 1, 1); // 将球体反向，使得相机在球体内部
+    // 球体半径 500，60 段宽度，40 段高度
+    const geometry = new THREE.SphereGeometry(500, 60, 40);
+    // 将球体反向，使得相机在球体内部
+    geometry.scale(-1, 1, 1);
 
     // 加载全景图纹理
     const texture = new EXRLoader().load("/textures/hotel_room_4k.exr");
@@ -64,7 +66,7 @@ export function useVR() {
     animate();
 
     // 鼠标按下事件
-    document.addEventListener("pointerdown", (event) => {
+    dom.addEventListener("pointerdown", (event: any) => {
       isUserInteracting = true;
       onPointerDownPointerX = event.clientX;
       onPointerDownPointerY = event.clientY; // 记录初始Y轴位置
@@ -73,20 +75,21 @@ export function useVR() {
     });
 
     // 鼠标移动事件
-    document.addEventListener("pointermove", (event) => {
+    dom.addEventListener("pointermove", (event: any) => {
       if (isUserInteracting) {
         lon = (onPointerDownPointerX - event.clientX) * 0.1 + onPointerDownLon;
-        lat = (onPointerDownPointerY - event.clientY) * 0.1 + onPointerDownLat; // 修正lat的计算方式
+        // 修正lat的计算方式
+        lat = (onPointerDownPointerY - event.clientY) * 0.1 + onPointerDownLat;
       }
     });
 
     // 鼠标松开事件
-    document.addEventListener("pointerup", () => {
+    dom.addEventListener("pointerup", () => {
       isUserInteracting = false;
     });
 
     // 窗口大小调整事件
-    window.addEventListener("resize", onWindowResize);
+    dom.addEventListener("resize", onWindowResize);
   };
 
   // 动画循环
