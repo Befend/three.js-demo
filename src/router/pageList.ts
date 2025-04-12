@@ -65,6 +65,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/love',
+    name: '06.表白',
+    component: () => import('../views/examples/love.vue'),
+    meta: {
+      title: '表白',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 
