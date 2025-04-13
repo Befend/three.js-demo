@@ -140,6 +140,7 @@ export function useDynamicCube() {
   };
   const destroy = () => {
     try {
+      gui?.destroy();
       renderer?.dispose();
       renderer?.forceContextLoss();
       renderer.content = null;
@@ -157,6 +158,7 @@ export function useDynamicCube() {
         }
         child = null;
       });
+      gui = null;
       renderer = null;
       camera = null;
       scene = null;

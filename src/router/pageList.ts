@@ -91,6 +91,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/fireworks',
+    name: '08.烟火',
+    component: () => import('../views/examples/fireworks.vue'),
+    meta: {
+      title: '烟火',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 
