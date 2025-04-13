@@ -173,7 +173,7 @@ export function useOcean() {
     mesh.rotation.x = time * 0.5;
     mesh.rotation.z = time * 0.51;
     water.material.uniforms['time'].value += 1.0 / 60.0;
-    renderer.render(scene, camera);
+    renderer?.render(scene, camera);
   };
   // 销毁，防止内存泄漏
   const destroy = () => {

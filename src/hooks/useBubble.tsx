@@ -39,7 +39,7 @@ export function useBubble() {
     requestAnimationFrame(animate);
     cameraCtrl.update();
     stats?.update();
-    renderer.render(scene, camera);
+    renderer?.render(scene, camera);
   };
   // 窗口大小调整事件
   const onWindowResize = () => {

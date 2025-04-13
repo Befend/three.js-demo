@@ -5,12 +5,12 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useAirplane } from '@/hooks/useAirplane'
-const { initAirplane, destroy } = useAirplane()
+import { useChristmasTree } from '@/hooks/useChristmasTree'
+const { initChristmasTree, destroy } = useChristmasTree()
 const canvasRef: any = ref()
 
 onMounted(() => {
-  initAirplane(canvasRef.value)
+  initChristmasTree(canvasRef.value)
 })
 onBeforeUnmount(() => {
   destroy()

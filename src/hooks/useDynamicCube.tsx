@@ -110,7 +110,7 @@ export function useDynamicCube() {
 
     // 相机固定
     camera.lookAt(scene);
-    renderer.render(scene, camera);
+    renderer?.render(scene, camera);
     // 添加控制器
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;

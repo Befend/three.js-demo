@@ -78,6 +78,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/christmasTree',
+    name: '07.圣诞树',
+    component: () => import('../views/examples/christmasTree.vue'),
+    meta: {
+      title: '圣诞树',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 

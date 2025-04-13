@@ -277,7 +277,7 @@ export function useLove() {
     stats?.update();
 
     // 渲染场景
-    renderer.render(scene, camera);
+    renderer?.render(scene, camera);
   };
   // 窗口大小调整事件
   const onWindowResize = () => {
