@@ -85,7 +85,7 @@ class Firework {
 
     // 创建粒子系统并添加到场景
     this.points = new THREE.Points(this.geometry, material);
-    scene.add(this.points);
+    scene?.add(this.points);
   }
 
   // 更新烟花状态
@@ -117,9 +117,9 @@ class Firework {
 
   // 清理烟花资源
   dispose() {
-    scene.remove(this.points); // 从场景中移除
-    this.geometry.dispose(); // 释放几何体
-    this.points.material.dispose(); // 释放材质
+    scene?.remove(this.points); // 从场景中移除
+    this.geometry?.dispose(); // 释放几何体
+    this.points?.material?.dispose(); // 释放材质
   }
 }
 

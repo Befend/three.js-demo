@@ -107,7 +107,7 @@ export function useVR() {
     const lookAtY = 500 * Math.cos(phi);
     const lookAtZ = 500 * Math.sin(phi) * Math.sin(theta);
 
-    camera.lookAt(lookAtX, lookAtY, lookAtZ);
+    camera?.lookAt(lookAtX, lookAtY, lookAtZ);
     stats?.update();
 
     renderer?.render(scene, camera);
