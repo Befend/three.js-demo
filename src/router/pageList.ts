@@ -104,6 +104,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/galaxy',
+    name: '09.星系',
+    component: () => import('../views/examples/galaxy.vue'),
+    meta: {
+      title: '星系',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 
