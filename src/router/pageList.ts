@@ -117,6 +117,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true,
     }
+  },
+  {
+    path: '/dissolveEffect',
+    name: '10.溶解效果',
+    component: () => import('../views/examples/dissolveEffect.vue'),
+    meta: {
+      title: '溶解效果',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true,
+    }
   }
 ];
 
