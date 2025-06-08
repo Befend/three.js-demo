@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import Stats from 'three/addons/libs/stats.module.js';
