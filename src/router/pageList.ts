@@ -141,6 +141,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true
     }
+  },
+  {
+    path: '/iceTrails',
+    name: '12.冰雪轨迹',
+    component: () => import('../views/examples/iceTrails.vue'),
+    meta: {
+      title: '冰雪轨迹',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true
+    }
   }
 ]
 
