@@ -154,6 +154,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true
     }
+  },
+  {
+    path: '/thunder',
+    name: '13.电闪雷鸣',
+    component: () => import('../views/examples/thunder.vue'),
+    meta: {
+      title: '电闪雷鸣',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true
+    }
   }
 ]
 
