@@ -27,6 +27,7 @@ export function useThunder() {
     directionalLight.position.set(0, 0, 1);
     scene.add(directionalLight);
 
+    // TODO: 闪电失效
     // 5. 闪电点光源
     flash = new THREE.PointLight(0x062d89, 30, 500, 1.7);
     flash.position.set(200, 300, 100);
