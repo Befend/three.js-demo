@@ -167,6 +167,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true
     }
+  },
+  {
+    path: '/nightEarth',
+    name: '14.夜间地球',
+    component: () => import('../views/examples/nightEarth.vue'),
+    meta: {
+      title: '夜间地球',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true
+    }
   }
 ]
 
