@@ -180,6 +180,19 @@ const pageList = [
       noCache: false,
       breadcrumb: true
     }
+  },
+  {
+    path: '/3DPowerBall',
+    name: '15.3D能量球',
+    component: () => import('../views/examples/3DPowerBall.vue'),
+    meta: {
+      title: '3D能量球',
+      icon: 'el-icon-s-home',
+      hidden: false,
+      affix: false,
+      noCache: false,
+      breadcrumb: true
+    }
   }
 ]
 
